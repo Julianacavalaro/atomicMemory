@@ -1,4 +1,4 @@
-abstract class ElementAtom {
+abstract class AtomicElement {
   final String name;
   final String symbol;
   final String atomicNumber;
@@ -9,38 +9,38 @@ abstract class ElementAtom {
   static String get atomicNumberJsonKey => 'atomicNumber';
   static String get atomicMassJsonKey => 'atomicMass';
 
-  const ElementAtom(
+  const AtomicElement(
       {required this.name,
       required this.symbol,
       required this.atomicNumber,
       required this.atomicMass});
 }
 
-class ElementAtomImpl extends ElementAtom {
-  const ElementAtomImpl(
+class AtomicElementImpl extends AtomicElement {
+  const AtomicElementImpl(
       {required super.name,
       required super.symbol,
       required super.atomicNumber,
       required super.atomicMass});
 
-  factory ElementAtomImpl.fromJson(Map<String, dynamic> json) =>
-      ElementAtomImpl(
-        name: json[ElementAtom.nameJsonKey] ?? '',
-        atomicNumber: json[ElementAtom.atomicNumberJsonKey] ?? '',
-        atomicMass: json[ElementAtom.atomicMassJsonKey] ?? '',
-        symbol: json[ElementAtom.symbolJsonKey] ?? '',
+  factory AtomicElementImpl.fromJson(Map<String, dynamic> json) =>
+      AtomicElementImpl(
+        name: json[AtomicElement.nameJsonKey] ?? '',
+        atomicNumber: json[AtomicElement.atomicNumberJsonKey] ?? '',
+        atomicMass: json[AtomicElement.atomicMassJsonKey] ?? '',
+        symbol: json[AtomicElement.symbolJsonKey] ?? '',
       );
 
   Map<String, dynamic> toJson() => {
-        ElementAtom.nameJsonKey: name,
-        ElementAtom.atomicNumberJsonKey: atomicNumber,
-        ElementAtom.atomicMassJsonKey: atomicMass,
-        ElementAtom.symbolJsonKey: symbol,
+        AtomicElement.nameJsonKey: name,
+        AtomicElement.atomicNumberJsonKey: atomicNumber,
+        AtomicElement.atomicMassJsonKey: atomicMass,
+        AtomicElement.symbolJsonKey: symbol,
       };
 
   @override
   bool operator ==(Object other) {
-    return other is ElementAtomImpl &&
+    return other is AtomicElementImpl &&
         other.atomicNumber == atomicNumber &&
         other.atomicMass == atomicMass &&
         other.name == name &&
