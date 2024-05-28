@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   final family1AJson = {
+    "id": "1A",
     "name": "alcalinos",
     "elements": [
       {
@@ -48,7 +49,8 @@ void main() {
     test('Verificando construtores', () {
       final family1A = ElementFamilyImpl.fromJson(family1AJson);
       final emptyFamily = ElementFamilyImpl.fromJson({});
-      const unknowFamily = ElementFamilyImpl(name: 'unknow', elements: []);
+      const unknowFamily =
+          ElementFamilyImpl(name: 'unknow', elements: [], familyId: '2A');
 
       expect(family1A, isA<ElementFamilyImpl>());
       expect(family1A, isA<ElementFamily>());
@@ -63,7 +65,8 @@ void main() {
     test('Verificando propriedades', () {
       final family1A = ElementFamilyImpl.fromJson(family1AJson);
       final emptyFamily = ElementFamilyImpl.fromJson({});
-      const unknowFamily = ElementFamilyImpl(name: 'unknow', elements: []);
+      const unknowFamily =
+          ElementFamilyImpl(name: 'unknow', elements: [], familyId: '2A');
 
       expect(family1A.name.isNotEmpty, true);
       expect(unknowFamily.name == 'unknow', true);
@@ -73,6 +76,7 @@ void main() {
       expect(family1A.elements.length == 6, true);
       expect(unknowFamily.elements.isEmpty, true);
       expect(emptyFamily.elements.isEmpty, true);
+      expect(family1A.familyId == "1A", true);
 
       final lastElement1A = family1A.elements.last;
       expect(lastElement1A.symbol == "Cs", true);
@@ -82,7 +86,8 @@ void main() {
       final family1A = ElementFamilyImpl.fromJson(family1AJson);
       final familyCopy1A = ElementFamilyImpl.fromJson(family1AJson);
       final emptyFamily = ElementFamilyImpl.fromJson({});
-      const unknowFamily = ElementFamilyImpl(name: '', elements: []);
+      const unknowFamily =
+          ElementFamilyImpl(name: '', elements: [], familyId: '');
 
       expect(family1A == familyCopy1A, true);
       expect(family1A.hashCode == familyCopy1A.hashCode, true);
