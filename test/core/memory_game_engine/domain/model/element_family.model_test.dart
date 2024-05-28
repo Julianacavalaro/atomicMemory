@@ -77,5 +77,18 @@ void main() {
       final lastElement1A = family1A.elements.last;
       expect(lastElement1A.symbol == "Cs", true);
     });
+
+    test('Verificando operadores', () {
+      final family1A = ElementFamilyImpl.fromJson(family1AJson);
+      final familyCopy1A = ElementFamilyImpl.fromJson(family1AJson);
+      final emptyFamily = ElementFamilyImpl.fromJson({});
+      const unknowFamily = ElementFamilyImpl(name: '', elements: []);
+
+      expect(family1A == familyCopy1A, true);
+      expect(family1A.hashCode == familyCopy1A.hashCode, true);
+      expect(emptyFamily == unknowFamily, true);
+      expect(emptyFamily.hashCode == unknowFamily.hashCode, true);
+      expect(family1A != emptyFamily, true);
+    });
   });
 }
