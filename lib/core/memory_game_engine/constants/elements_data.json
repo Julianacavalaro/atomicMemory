@@ -2,6 +2,7 @@
     "periodic-table": {
       "groups": [
         {
+          "id": "1A",
           "name": "alcalinos",
           "elements": [
             {
@@ -43,6 +44,7 @@
           ]
         },
         {
+          "id": "2A",
           "name": "alcalinos_terrosos",
           "elements": [
             {
