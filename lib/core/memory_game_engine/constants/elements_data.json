@@ -1,9 +1,8 @@
 {
-    "periodic-table": {
-      "groups": [
+    "groups": [
         {
           "id": "1A",
-          "name": "alcalinos",
+          "name": "Alcalinos",
           "elements": [
             {
               "name": "Lítio",
@@ -45,7 +44,7 @@
         },
         {
           "id": "2A",
-          "name": "alcalinos_terrosos",
+          "name": "Alcalinos terrosos",
           "elements": [
             {
               "name": "Berílio",
@@ -86,5 +85,4 @@
           ]
         }
       ]
-    }
   }
