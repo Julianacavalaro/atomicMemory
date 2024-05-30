@@ -1,12 +1,13 @@
 import 'package:atomic_memory/core/memory_game_engine/domain/model/atomic_element_sort.model.dart';
-import 'package:atomic_memory/core/memory_game_engine/infrastructure/datasource/element_sort_datasource.dart';
+import 'package:atomic_memory/core/memory_game_engine/infrastructure/datasource/atomic_element_sort_datasource.dart';
 import 'package:atomic_memory/core/memory_game_engine/infrastructure/repository/atomic_elements_sort_repository.impl.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
 import '../../../../mock/json_data.dart';
 
-class ElementSortDatasourceMock extends Mock implements ElementSortDatasource {}
+class ElementSortDatasourceMock extends Mock
+    implements AtomicElementSortDatasource {}
 
 void main() {
   final datasourceMock = ElementSortDatasourceMock();

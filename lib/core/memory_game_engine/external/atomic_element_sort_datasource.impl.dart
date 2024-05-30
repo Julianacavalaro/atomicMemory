@@ -3,12 +3,12 @@ import 'dart:convert' as json_utility;
 
 import '../constants/constants.dart';
 import '../domain/model/atomic_element_sort.model.dart';
-import '../infrastructure/datasource/element_sort_datasource.dart';
+import '../infrastructure/datasource/atomic_element_sort_datasource.dart';
 
-class ElementSortDatasourceImpl extends ElementSortDatasource {
+class AtomicElementSortDatasourceImpl extends AtomicElementSortDatasource {
   final MemoryGameConstants constants;
 
-  ElementSortDatasourceImpl({required this.constants});
+  AtomicElementSortDatasourceImpl({required this.constants});
 
   @override
   Future<AtomicElementSort> getElementSort() async {
