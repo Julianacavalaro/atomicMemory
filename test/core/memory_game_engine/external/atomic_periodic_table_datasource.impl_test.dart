@@ -1,5 +1,5 @@
 import 'package:atomic_memory/core/memory_game_engine/constants/constants.dart';
-import 'package:atomic_memory/core/memory_game_engine/external/atomic_element_sort_datasource.impl.dart';
+import 'package:atomic_memory/core/memory_game_engine/external/atomic_periodic_table_datasource.impl.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

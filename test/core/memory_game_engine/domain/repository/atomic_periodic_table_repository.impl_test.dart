@@ -1,19 +1,19 @@
-import 'package:atomic_memory/core/memory_game_engine/domain/model/atomic_element_sort.model.dart';
-import 'package:atomic_memory/core/memory_game_engine/infrastructure/datasource/atomic_element_sort_datasource.dart';
-import 'package:atomic_memory/core/memory_game_engine/infrastructure/repository/atomic_elements_sort_repository.impl.dart';
+import 'package:atomic_memory/core/memory_game_engine/domain/model/atomic_periodic_table.model.dart';
+import 'package:atomic_memory/core/memory_game_engine/infrastructure/datasource/atomic_periodic_table_datasource.dart';
+import 'package:atomic_memory/core/memory_game_engine/infrastructure/repository/atomic_periodic_table_repository.impl.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
 import '../../../../mock/json_data.dart';
 
 class ElementSortDatasourceMock extends Mock
-    implements AtomicElementSortDatasource {}
+    implements AtomicPeriodicTableDatasource {}
 
 void main() {
   final datasourceMock = ElementSortDatasourceMock();
-  final periodicTableMock = AtomicElementSortImpl.fromJson(elementGroupsJson);
+  final periodicTableMock = AtomicPeriodicTableImpl.fromJson(elementGroupsJson);
   final repository =
-      AtomicElementsSortRepositoryImpl(elementSortDatasource: datasourceMock);
+      AtomicPeriodicTableRepositoryImpl(elementSortDatasource: datasourceMock);
 
   group('Teste AtomicElementsSortRepositoryImpl', () {
     test('Verificando obter tabela periódica', () async {
@@ -21,7 +21,7 @@ void main() {
           .thenAnswer((_) async => periodicTableMock);
 
       final results = await repository.getAtomicElements();
-      expect(results, isA<AtomicElementSort>());
+      expect(results, isA<AtomicPeriodicTable>());
       expect(results.groups.isNotEmpty, true);
     });
   });
