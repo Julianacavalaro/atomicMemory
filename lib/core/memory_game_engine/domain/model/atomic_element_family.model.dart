@@ -1,6 +1,6 @@
 import 'package:atomic_memory/core/memory_game_engine/domain/model/atomic_element.model.dart';
 
-abstract class ElementFamily {
+abstract class AtomicElementFamily {
   final String familyId;
   final String name;
   final List<AtomicElement> elements;
@@ -9,30 +9,30 @@ abstract class ElementFamily {
   static String get elementsJsonKey => "elements";
   static String get familyIdJsonKey => "id";
 
-  const ElementFamily(
+  const AtomicElementFamily(
       {required this.name, required this.elements, required this.familyId});
 }
 
-class ElementFamilyImpl extends ElementFamily {
-  const ElementFamilyImpl({
+class AtomicElementFamilyImpl extends AtomicElementFamily {
+  const AtomicElementFamilyImpl({
     required super.name,
     required super.elements,
     required super.familyId,
   });
 
-  factory ElementFamilyImpl.fromJson(Map<String, dynamic> json) =>
-      ElementFamilyImpl(
-          familyId: json[ElementFamily.familyIdJsonKey] ?? '',
-          name: json[ElementFamily.nameJsonKey] ?? '',
-          elements: json[ElementFamily.elementsJsonKey] == null
+  factory AtomicElementFamilyImpl.fromJson(Map<String, dynamic> json) =>
+      AtomicElementFamilyImpl(
+          familyId: json[AtomicElementFamily.familyIdJsonKey] ?? '',
+          name: json[AtomicElementFamily.nameJsonKey] ?? '',
+          elements: json[AtomicElementFamily.elementsJsonKey] == null
               ? []
-              : (json[ElementFamily.elementsJsonKey] as List)
+              : (json[AtomicElementFamily.elementsJsonKey] as List)
                   .map((element) => AtomicElementImpl.fromJson(element))
                   .toList());
 
   @override
   bool operator ==(Object other) {
-    return other is ElementFamilyImpl &&
+    return other is AtomicElementFamilyImpl &&
         name == other.name &&
         familyId == other.familyId &&
         elements.length == other.elements.length;

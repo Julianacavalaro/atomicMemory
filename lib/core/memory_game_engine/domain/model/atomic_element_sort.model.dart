@@ -1,7 +1,7 @@
-import 'element_family.model.dart';
+import 'atomic_element_family.model.dart';
 
 abstract class AtomicElementSort {
-  final List<ElementFamily> groups;
+  final List<AtomicElementFamily> groups;
   static String get groupsJsonKey => "groups";
   const AtomicElementSort({required this.groups});
 }
@@ -15,6 +15,6 @@ class AtomicElementSortImpl extends AtomicElementSort {
               ? []
               : (json[AtomicElementSort.groupsJsonKey] as List)
                   .map((elementFamily) =>
-                      ElementFamilyImpl.fromJson(elementFamily))
+                      AtomicElementFamilyImpl.fromJson(elementFamily))
                   .toList());
 }

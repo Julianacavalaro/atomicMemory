@@ -1,4 +1,4 @@
-import 'package:atomic_memory/core/memory_game_engine/domain/model/element_family.model.dart';
+import 'package:atomic_memory/core/memory_game_engine/domain/model/atomic_element_family.model.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -47,26 +47,26 @@ void main() {
 
   group('Testes ElementFamilyImpl', () {
     test('Verificando construtores', () {
-      final family1A = ElementFamilyImpl.fromJson(family1AJson);
-      final emptyFamily = ElementFamilyImpl.fromJson({});
+      final family1A = AtomicElementFamilyImpl.fromJson(family1AJson);
+      final emptyFamily = AtomicElementFamilyImpl.fromJson({});
       const unknowFamily =
-          ElementFamilyImpl(name: 'unknow', elements: [], familyId: '2A');
+          AtomicElementFamilyImpl(name: 'unknow', elements: [], familyId: '2A');
 
-      expect(family1A, isA<ElementFamilyImpl>());
-      expect(family1A, isA<ElementFamily>());
+      expect(family1A, isA<AtomicElementFamilyImpl>());
+      expect(family1A, isA<AtomicElementFamily>());
 
-      expect(emptyFamily, isA<ElementFamilyImpl>());
-      expect(emptyFamily, isA<ElementFamily>());
+      expect(emptyFamily, isA<AtomicElementFamilyImpl>());
+      expect(emptyFamily, isA<AtomicElementFamily>());
 
-      expect(unknowFamily, isA<ElementFamilyImpl>());
-      expect(unknowFamily, isA<ElementFamily>());
+      expect(unknowFamily, isA<AtomicElementFamilyImpl>());
+      expect(unknowFamily, isA<AtomicElementFamily>());
     });
 
     test('Verificando propriedades', () {
-      final family1A = ElementFamilyImpl.fromJson(family1AJson);
-      final emptyFamily = ElementFamilyImpl.fromJson({});
+      final family1A = AtomicElementFamilyImpl.fromJson(family1AJson);
+      final emptyFamily = AtomicElementFamilyImpl.fromJson({});
       const unknowFamily =
-          ElementFamilyImpl(name: 'unknow', elements: [], familyId: '2A');
+          AtomicElementFamilyImpl(name: 'unknow', elements: [], familyId: '2A');
 
       expect(family1A.name.isNotEmpty, true);
       expect(unknowFamily.name == 'unknow', true);
@@ -83,11 +83,11 @@ void main() {
     });
 
     test('Verificando operadores', () {
-      final family1A = ElementFamilyImpl.fromJson(family1AJson);
-      final familyCopy1A = ElementFamilyImpl.fromJson(family1AJson);
-      final emptyFamily = ElementFamilyImpl.fromJson({});
+      final family1A = AtomicElementFamilyImpl.fromJson(family1AJson);
+      final familyCopy1A = AtomicElementFamilyImpl.fromJson(family1AJson);
+      final emptyFamily = AtomicElementFamilyImpl.fromJson({});
       const unknowFamily =
-          ElementFamilyImpl(name: '', elements: [], familyId: '');
+          AtomicElementFamilyImpl(name: '', elements: [], familyId: '');
 
       expect(family1A == familyCopy1A, true);
       expect(family1A.hashCode == familyCopy1A.hashCode, true);
