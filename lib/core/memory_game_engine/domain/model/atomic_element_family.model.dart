@@ -20,6 +20,9 @@ class AtomicElementFamilyImpl extends AtomicElementFamily {
     required super.familyId,
   });
 
+  factory AtomicElementFamilyImpl.empty() =>
+      AtomicElementFamilyImpl.fromJson({});
+
   factory AtomicElementFamilyImpl.fromJson(Map<String, dynamic> json) =>
       AtomicElementFamilyImpl(
           familyId: json[AtomicElementFamily.familyIdJsonKey] ?? '',
