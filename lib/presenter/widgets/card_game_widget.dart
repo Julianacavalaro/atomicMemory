@@ -1,7 +1,7 @@
 import 'dart:math';
 
-import 'package:atomic_memory/presenter/widgets/card_atom_widget.dart';
-import 'package:atomic_memory/presenter/widgets/card_chemical_element_widget.dart';
+import 'package:atomic_memory/presenter/widgets/card_back_widget.dart';
+import 'package:atomic_memory/presenter/widgets/card_front_widget.dart';
 import 'package:flutter/material.dart';
 
 class CardGameWidget extends StatefulWidget {
@@ -30,18 +30,18 @@ class _CardGameWidgetState extends State<CardGameWidget>
     super.dispose();
   }
 
-flipCard() {
-  animation.forward();
-}
+  flipCard() {
+    animation.forward();
+  }
 
- getCardAtom(double angulo){
-if(angulo > 0.5 * pi) {
-  return const CardChemicalElementWidget ();
-} else {
-  return const CardWidget();
-}
+  getCardAtom(double angulo) {
+    if (angulo > 0.5 * pi) {
+      return const CardFrontWidget();
+    } else {
+      return const CardBackWidget();
+    }
+  }
 
-   }
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
@@ -51,17 +51,19 @@ if(angulo > 0.5 * pi) {
           final transform = Matrix4.identity()
             ..setEntry(3, 2, 0.0002)
             ..rotateY(angulo);
+
           return GestureDetector(
             onTap: () => flipCard(),
             child: Transform(
               transform: transform,
               alignment: Alignment.center,
+              child: Card(
+                margin: const EdgeInsetsDirectional.all(0),
+                elevation: 4,
               child: getCardAtom(angulo),
-              
+              )
             ),
           );
         });
   }
-
 }
-

@@ -1,8 +1,6 @@
-import 'dart:math';
 
 import 'package:atomic_memory/presenter/widgets/card_game_widget.dart';
-import 'package:atomic_memory/presenter/widgets/card_atom_widget.dart';
-import 'package:atomic_memory/presenter/widgets/card_chemical_element_widget.dart';
+
 import 'package:flutter/material.dart';
 
 class GamePage extends StatelessWidget {
