@@ -55,14 +55,13 @@ class _CardGameWidgetState extends State<CardGameWidget>
           return GestureDetector(
             onTap: () => flipCard(),
             child: Transform(
-              transform: transform,
-              alignment: Alignment.center,
-              child: Card(
-                margin: const EdgeInsetsDirectional.all(0),
-                elevation: 4,
-              child: getCardAtom(angulo),
-              )
-            ),
+                transform: transform,
+                alignment: Alignment.center,
+                child: Card(
+                  margin: const EdgeInsetsDirectional.all(0),
+                  elevation: 4,
+                  child: getCardAtom(angulo),
+                )),
           );
         });
   }

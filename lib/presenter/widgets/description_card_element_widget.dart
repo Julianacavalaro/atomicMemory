@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 class DescriptionCardFrontWidget extends StatelessWidget {
-  const DescriptionCardFrontWidget({super.key
-   });
+  const DescriptionCardFrontWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -44,18 +43,19 @@ class DescriptionCardFrontWidget extends StatelessWidget {
             ),
           ),
         ]),
-        Row(mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
-         children: [
-          Text(
-            'Lithium',
-            style: TextStyle(
-              fontSize: 10,
-              fontFamily: 'Poppins-SemiBold',
-              color: Colors.black,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              'Lithium',
+              style: TextStyle(
+                fontSize: 10,
+                fontFamily: 'Poppins-SemiBold',
+                color: Colors.black,
+              ),
             ),
-          ),
-        ],
+          ],
         ),
       ],
     );
