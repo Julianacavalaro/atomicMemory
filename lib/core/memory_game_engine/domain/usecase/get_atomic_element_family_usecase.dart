@@ -1,5 +1,5 @@
-import '../model/atomic_element_family.model.dart';
-import '../model/atomic_periodic_table.model.dart';
+import '../model/atomic_chemestry/atomic_element_family.model.dart';
+import '../model/atomic_chemestry/atomic_periodic_table.model.dart';
 
 abstract class GetAtomicElementFamilyUsecase {
   AtomicElementFamily getAtomicElementFamilyFromIndex(

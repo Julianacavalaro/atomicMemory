@@ -31,12 +31,12 @@ class AtomicElementImpl extends AtomicElement {
         symbol: json[AtomicElement.symbolJsonKey] ?? '',
       );
 
-  Map<String, dynamic> toJson() => {
-        AtomicElement.nameJsonKey: name,
-        AtomicElement.atomicNumberJsonKey: atomicNumber,
-        AtomicElement.atomicMassJsonKey: atomicMass,
-        AtomicElement.symbolJsonKey: symbol,
-      };
+  // Map<String, dynamic> toJson() => {
+  //       AtomicElement.nameJsonKey: name,
+  //       AtomicElement.atomicNumberJsonKey: atomicNumber,
+  //       AtomicElement.atomicMassJsonKey: atomicMass,
+  //       AtomicElement.symbolJsonKey: symbol,
+  //     };
 
   @override
   bool operator ==(Object other) {

@@ -1,4 +1,4 @@
-import 'package:atomic_memory/core/memory_game_engine/domain/model/atomic_element_family.model.dart';
+import 'package:atomic_memory/core/memory_game_engine/domain/model/atomic_chemestry/atomic_element_family.model.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

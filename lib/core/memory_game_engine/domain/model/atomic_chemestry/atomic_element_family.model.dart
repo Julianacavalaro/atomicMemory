@@ -1,4 +1,4 @@
-import 'package:atomic_memory/core/memory_game_engine/domain/model/atomic_element.model.dart';
+import 'package:atomic_memory/core/memory_game_engine/domain/model/atomic_chemestry/atomic_element.model.dart';
 
 abstract class AtomicElementFamily {
   final String familyId;

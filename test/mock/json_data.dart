@@ -2,7 +2,7 @@ final elementGroupsJson = {
   "groups": [
     {
       "id": "1A",
-      "name": "alcalinos",
+      "name": "Metais alcalinos",
       "elements": [
         {
           "name": "Lítio",
@@ -44,7 +44,7 @@ final elementGroupsJson = {
     },
     {
       "id": "2A",
-      "name": "alcalinos_terrosos",
+      "name": "Metais Alcalinos terrosos",
       "elements": [
         {
           "name": "Berílio",

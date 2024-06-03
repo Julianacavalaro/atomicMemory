@@ -2,7 +2,7 @@
     "groups": [
         {
           "id": "1A",
-          "name": "Alcalinos",
+          "name": "Metais alcalinos",
           "elements": [
             {
               "name": "Lítio",
@@ -42,6 +42,9 @@
             }
           ]
         },
+        
+        
+        
         {
           "id": "2A",
           "name": "Alcalinos terrosos",

@@ -1,4 +1,4 @@
-import 'package:atomic_memory/core/memory_game_engine/domain/model/atomic_periodic_table.model.dart';
+import 'package:atomic_memory/core/memory_game_engine/domain/model/atomic_chemestry/atomic_periodic_table.model.dart';
 import 'package:atomic_memory/core/memory_game_engine/domain/usecase/get_atomic_element_family_usecase.dart';
 import 'package:flutter_test/flutter_test.dart';
 

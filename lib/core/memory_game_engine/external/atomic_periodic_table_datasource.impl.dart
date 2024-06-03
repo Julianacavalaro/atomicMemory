@@ -2,7 +2,7 @@ import 'dart:io';
 import 'dart:convert' as json_utility;
 
 import '../constants/constants.dart';
-import '../domain/model/atomic_periodic_table.model.dart';
+import '../domain/model/atomic_chemestry/atomic_periodic_table.model.dart';
 import '../infrastructure/datasource/atomic_periodic_table_datasource.dart';
 
 class AtomicElementSortDatasourceImpl extends AtomicPeriodicTableDatasource {
