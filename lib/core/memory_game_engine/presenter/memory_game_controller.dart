@@ -37,13 +37,18 @@ class AtomicMemoryGameControllerImp extends MemoryGameController {
 
       updatedStatistics = value.statistics
           .copyWith(numberOfSuccess: value.statistics.numberOfSuccess + 1);
-      updateGameStatistics(statistics: updatedStatistics);
       hasMatch = true;
     } else {
       updatedStatistics = value.statistics
           .copyWith(numberOfFailure: value.statistics.numberOfFailure + 1);
-      updateGameStatistics(statistics: updatedStatistics);
+
       hasMatch = false;
+    }
+
+    updateGameStatistics(statistics: updatedStatistics);
+
+    if (_shouldFinishGame(updatedStatistics)) {
+      finishGame();
     }
     return hasMatch;
   }
@@ -97,4 +102,7 @@ class AtomicMemoryGameControllerImp extends MemoryGameController {
   @override
   void updateGameStatistics({required MemoryGameStatistics statistics}) =>
       value = value.copyWith(statistics: statistics);
+
+  bool _shouldFinishGame(MemoryGameStatistics statistics) =>
+      (statistics.numberOfSuccess * 2) == value.gameElements.length;
 }

@@ -64,7 +64,7 @@ void main() {
       expect(engine.value.gameStatus == MemoryGameStatus.running, true);
     });
 
-    test('Verificando sucesso em match e estatisticas do jogo', () async {
+    test('Verificando ocorrência de match e estatisticas do jogo', () async {
       when(() => usecaseMock.generateGameItems(size: defaultGameSize))
           .thenAnswer((_) async => memoryGameItensMock());
 
@@ -86,7 +86,8 @@ void main() {
       expect(lithium02.isFounded, true);
     });
 
-    test('Verificando erro em match e estatisticas do jogo', () async {
+    test('Verificando não ocorrência de match e estatisticas do jogo',
+        () async {
       when(() => usecaseMock.generateGameItems(size: defaultGameSize))
           .thenAnswer((_) async => memoryGameItensMock());
 
@@ -106,6 +107,30 @@ void main() {
 
       expect(!lithium01.isFounded, true);
       expect(!rubidio.isFounded, true);
+    });
+
+    test('Verificando matchs e finalização de partida', () async {
+      when(() => usecaseMock.generateGameItems(size: defaultGameSize))
+          .thenAnswer((_) async => memoryGameItensMock());
+
+      await engine.newGame(size: defaultGameSize);
+      engine.startGame();
+
+      expect(
+          engine.hasMatch(
+              item1: engine.value.gameElements[0],
+              item2: engine.value.gameElements[2]),
+          true);
+
+      expect(
+          engine.hasMatch(
+              item1: engine.value.gameElements[1],
+              item2: engine.value.gameElements[3]),
+          true);
+
+      expect(engine.value.gameStatus == MemoryGameStatus.finished, true);
+      expect(engine.value.statistics.numberOfSuccess == 2, true);
+      expect(engine.value.statistics.numberOfFailure == 0, true);
     });
   });
 }
