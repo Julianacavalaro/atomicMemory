@@ -1,10 +1,10 @@
 import 'dart:math';
 
-import 'package:atomic_memory/presenter/widgets/description_card_element_widget.dart';
+import 'package:atomic_memory/feature/presenter/widgets/description_card_element_widget.dart';
 import 'package:flutter/material.dart';
 
 class CardFrontWidget extends StatelessWidget {
-  const CardFrontWidget({super.key});
+  const CardFrontWidget({super.key}); //
 
   @override
   Widget build(BuildContext context) {
@@ -22,4 +22,5 @@ class CardFrontWidget extends StatelessWidget {
       ),
     );
   }
+  //construtor com parametros, atributos
 }

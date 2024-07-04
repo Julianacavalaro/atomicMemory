@@ -8,7 +8,7 @@ class CardBackWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       child: Container(
-        padding: const EdgeInsets.all(25),
+        padding: const EdgeInsets.all(20),
         decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(8)),
             gradient: LinearGradient(end: Alignment.bottomLeft, colors: [

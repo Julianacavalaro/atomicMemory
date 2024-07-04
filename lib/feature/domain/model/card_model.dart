@@ -1,4 +1,4 @@
-class CardModel {
+abstract class CardModel {
   String atomicSymbol;
   String atomicName;
 
@@ -12,4 +12,18 @@ class CardModel {
       required this.atomicMass,
       required this.atomicNumber});
 
+}
+class CardModelImpl implements CardModel{
+  @override
+  late String atomicMass;
+
+  @override
+  late String atomicName;
+
+  @override
+  late String atomicNumber;
+
+  @override
+  late String atomicSymbol;
+  
 }

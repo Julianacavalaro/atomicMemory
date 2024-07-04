@@ -1,5 +1,4 @@
-import 'package:atomic_memory/presenter/widgets/card_game_widget.dart';
-
+import 'package:atomic_memory/feature/presenter/widgets/card_game_widget.dart';
 import 'package:flutter/material.dart';
 
 class GamePage extends StatelessWidget {
@@ -30,6 +29,5 @@ class GamePage extends StatelessWidget {
         ),
       ),
     );
-    //);
   }
 }

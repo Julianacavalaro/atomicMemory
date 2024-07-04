@@ -4,7 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 class CardBackWidgetFinders {
         Finder containerPadding = find.byWidgetPredicate((Widget widget) =>
             widget is Container &&
-            widget.padding == const EdgeInsets.all(25.0));
+            widget.padding == const EdgeInsets.all(20.0));
 
         Finder containerDecoration = find.byWidgetPredicate(
           (Widget widget) =>

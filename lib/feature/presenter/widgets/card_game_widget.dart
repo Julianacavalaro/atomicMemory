@@ -1,7 +1,7 @@
 import 'dart:math';
 
-import 'package:atomic_memory/presenter/widgets/card_back_widget.dart';
-import 'package:atomic_memory/presenter/widgets/card_front_widget.dart';
+import 'package:atomic_memory/feature/presenter/widgets/card_back_widget.dart';
+import 'package:atomic_memory/feature/presenter/widgets/card_front_widget.dart';
 import 'package:flutter/material.dart';
 
 class CardGameWidget extends StatefulWidget {
@@ -32,6 +32,9 @@ class _CardGameWidgetState extends State<CardGameWidget>
 
   flipCard() {
     animation.forward();
+    if (!animation.isAnimating) {
+      animation.reverse();
+    }
   }
 
   getCardAtom(double angulo) {

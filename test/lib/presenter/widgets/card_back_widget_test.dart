@@ -1,4 +1,4 @@
-import 'package:atomic_memory/presenter/widgets/card_back_widget.dart';
+import 'package:atomic_memory/feature/presenter/widgets/card_back_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -9,7 +9,7 @@ void main() {
   CardBackWidgetFinders finders = CardBackWidgetFinders();
   group('CardFrontWidget', () {
     testWidgets(
-      'Verifica o layout do card_back',
+      'TEste de funcionalidade card_back',
       (WidgetTester tester) async {
         await tester.pumpWidget(
           const CardBackWidget(),
@@ -26,6 +26,8 @@ void main() {
         expect(finders.containerPadding, findsOneWidget);
 
         expect(finders.containerDecoration, findsOneWidget);
+
+        // verificar se a imagem exibida é a imagem do átomo
       },
     );
   });
