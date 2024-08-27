@@ -33,12 +33,12 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const BarBoardWidget(),
         elevation: 4,
-        surfaceTintColor:  Colors.white,
+        surfaceTintColor: Colors.white,
         toolbarHeight: 70,
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(10))),
       ),
-      body: const Center(
+      body: Center(
         child: GamePage(),
       ),
     );

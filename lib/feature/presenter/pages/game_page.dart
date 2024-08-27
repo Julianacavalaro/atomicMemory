@@ -1,8 +1,72 @@
+import 'package:atomic_memory/feature/domain/model/card_model.dart';
 import 'package:atomic_memory/feature/presenter/widgets/card_game_widget.dart';
 import 'package:flutter/material.dart';
 
 class GamePage extends StatelessWidget {
-  const GamePage({super.key});
+  GamePage({super.key});
+
+  final List<CardModel> cardList = [
+    CardModelImpl(
+        atomicMass: '12',
+        atomicName: 'Lítio',
+        atomicNumber: '55',
+        atomicSymbol: 'Li'),
+    CardModelImpl(
+        atomicMass: '12',
+        atomicName: 'Lítio',
+        atomicNumber: '55',
+        atomicSymbol: 'Li'),
+    CardModelImpl(
+        atomicMass: '44',
+        atomicName: 'Potássio',
+        atomicNumber: '55',
+        atomicSymbol: 'K'),
+    CardModelImpl(
+        atomicMass: '44',
+        atomicName: 'Potássio',
+        atomicNumber: '55',
+        atomicSymbol: 'K'),
+    CardModelImpl(
+        atomicMass: '88',
+        atomicName: 'Urânio',
+        atomicNumber: '123',
+        atomicSymbol: 'U'),
+    CardModelImpl(
+        atomicMass: '88',
+        atomicName: 'Urânio',
+        atomicNumber: '123',
+        atomicSymbol: 'U'),
+    CardModelImpl(
+        atomicMass: '44',
+        atomicName: 'Ouro',
+        atomicNumber: '33',
+        atomicSymbol: 'Au'),
+    CardModelImpl(
+        atomicMass: '44',
+        atomicName: 'Ouro',
+        atomicNumber: '33',
+        atomicSymbol: 'Au'),
+    CardModelImpl(
+        atomicMass: '77',
+        atomicName: 'Platina',
+        atomicNumber: '11',
+        atomicSymbol: 'Pt'),
+    CardModelImpl(
+        atomicMass: '77',
+        atomicName: 'Platina',
+        atomicNumber: '11',
+        atomicSymbol: 'Pt'),
+    CardModelImpl(
+        atomicMass: '99',
+        atomicName: 'Titanio',
+        atomicNumber: '155',
+        atomicSymbol: 'Ti'),
+    CardModelImpl(
+        atomicMass: '99',
+        atomicName: 'Titanio',
+        atomicNumber: '155',
+        atomicSymbol: 'Ti'),
+  ]..shuffle();
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +88,11 @@ class GamePage extends StatelessWidget {
           crossAxisSpacing: 12,
           physics: const NeverScrollableScrollPhysics(),
           padding: const EdgeInsets.all(10.0),
-          children: List.generate(12, (int index) => const CardGameWidget(),
-              growable: true),
+          children: cardList
+              .map((atomicElement) => CardGameWidget(
+                    atomicElementModel: atomicElement,
+                  ))
+              .toList(),
         ),
       ),
     );

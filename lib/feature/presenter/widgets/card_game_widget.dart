@@ -4,8 +4,11 @@ import 'package:atomic_memory/feature/presenter/widgets/card_back_widget.dart';
 import 'package:atomic_memory/feature/presenter/widgets/card_front_widget.dart';
 import 'package:flutter/material.dart';
 
+import '../../domain/model/card_model.dart';
+
 class CardGameWidget extends StatefulWidget {
-  const CardGameWidget({super.key});
+  final CardModel atomicElementModel;
+  const CardGameWidget({super.key, required this.atomicElementModel});
 
   @override
   State<CardGameWidget> createState() => _CardGameWidgetState();
@@ -39,7 +42,7 @@ class _CardGameWidgetState extends State<CardGameWidget>
 
   getCardAtom(double angulo) {
     if (angulo > 0.5 * pi) {
-      return const CardFrontWidget();
+      return CardFrontWidget(atomicElement: widget.atomicElementModel);
     } else {
       return const CardBackWidget();
     }

@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
+import '../../domain/model/card_model.dart';
+
 class DescriptionCardFrontWidget extends StatelessWidget {
-  const DescriptionCardFrontWidget({super.key});
+  final CardModel atomicElement;
+  const DescriptionCardFrontWidget({super.key, required this.atomicElement});
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    const textStyle = TextStyle(
+      fontSize: 10,
+      fontFamily: 'Poppins-SemiBold',
+      color: Colors.black,
+    );
+    return Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         mainAxisSize: MainAxisSize.max,
         children: [
@@ -16,25 +24,17 @@ class DescriptionCardFrontWidget extends StatelessWidget {
               Flexible(
                 flex: 1,
                 child: Text(
-                  '3',
+                  atomicElement.atomicNumber,
                   maxLines: 1,
-                  style: TextStyle(
-                    fontSize: 10,
-                    fontFamily: 'Poppins-SemiBold',
-                    color: Colors.black,
-                  ),
+                  style: textStyle,
                 ),
               ),
               Flexible(
                 flex: 1,
                 child: Text(
-                  '6.9410',
+                  atomicElement.atomicMass,
                   maxLines: 1,
-                  style: TextStyle(
-                    fontSize: 10,
-                    fontFamily: 'Poppins-SemiBold',
-                    color: Colors.black,
-                  ),
+                  style: textStyle,
                 ),
               ),
             ],
@@ -42,8 +42,8 @@ class DescriptionCardFrontWidget extends StatelessWidget {
           Flexible(
             flex: 4,
             child: AutoSizeText(
-              'Li',
-              style: TextStyle(
+              atomicElement.atomicSymbol,
+              style: const TextStyle(
                 fontSize: 100,
                 fontFamily: 'Poppins-SemiBold',
                 color: Colors.black,
@@ -53,12 +53,8 @@ class DescriptionCardFrontWidget extends StatelessWidget {
           Flexible(
             flex: 1,
             child: Text(
-              'Lithium',
-              style: TextStyle(
-                fontSize: 10,
-                fontFamily: 'Poppins-SemiBold',
-                color: Colors.black,
-              ),
+              atomicElement.atomicName,
+              style: textStyle,
             ),
           ),
         ]);
